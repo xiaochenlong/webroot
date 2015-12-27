@@ -8,4 +8,5 @@
 <context:component-scan base-package="org.ace.web.service"></context:component-scan>
 
 	<import resource="spring-quartz.xml"/>
+
 </beans>
