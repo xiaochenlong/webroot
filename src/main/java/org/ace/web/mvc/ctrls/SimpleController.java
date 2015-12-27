@@ -9,7 +9,6 @@ import org.springframework.http.MediaType;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -49,6 +48,7 @@ public class  SimpleController{
         return  model;
     }
 
+
     /**
      * 单个文件上传
      * @param file
@@ -62,6 +62,7 @@ public class  SimpleController{
         model.addAttribute("message", "File '" + file.getOriginalFilename() + "' uploaded successfully");
         return model;
     }
+
 
     /**
      * 多个文件上传
