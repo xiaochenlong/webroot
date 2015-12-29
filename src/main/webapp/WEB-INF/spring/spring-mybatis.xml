@@ -10,7 +10,6 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 		">
 
-
     <context:property-placeholder location="/WEB-INF/spring/app.properties"/>
 
 
@@ -39,8 +38,11 @@
 
         <property name="driverClassName" value="${jdbc_driverClassName}"/>
 
-        <property name="filters" value="mergeStat"/>
+        <property name="filters" value="stat"/>
     </bean>
+
+
+
 
     <!-- myBatis文件 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
