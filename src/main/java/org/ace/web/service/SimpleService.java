@@ -14,7 +14,10 @@ public interface SimpleService {
     static final Logger logger = LoggerFactory.getLogger(SimpleService.class);
 
     Simple findByid(int id);
+
     int save(Simple simple);
+
     int update(Simple simple);
+
     List<Simple> list();
 }

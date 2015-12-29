@@ -1,9 +1,9 @@
 package org.ace.web.bean;
 
 /**
- * Created by xiaochenlong on 2015/12/27.
+ * Created by Administrator on 2015/12/29.
  */
-public class Simple {
+public class Demo {
 
     private int id;
     private String name;
@@ -26,9 +26,9 @@ public class Simple {
 
     @Override
     public String toString() {
-        return "Simple{" +
-                "name='" + name + '\'' +
-                ", id=" + id +
+        return "Demo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

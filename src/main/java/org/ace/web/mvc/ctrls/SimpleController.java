@@ -24,8 +24,17 @@ public class  SimpleController{
 
    private  static final Logger logger = LoggerFactory.getLogger(SimpleController.class);
 
+
     @Autowired
     private SimpleService service;
+
+    @RequestMapping(value = "/xreg",produces = {MediaType.APPLICATION_JSON_VALUE})
+
+    public Model register(Model model,Simple simple){
+        int ret = service.save(simple);
+        model.addAttribute("saveret",ret);
+        return model;
+    }
 
     @RequestMapping(value = "/str")
     public  String simple_str() {
