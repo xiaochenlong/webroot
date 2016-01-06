@@ -1,6 +1,5 @@
 import org.ace.web.bean.Demo;
 import org.ace.web.bean.Simple;
-import org.ace.web.dao.inter.SimpleDao;
 import org.ace.web.service.SimpleService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -33,12 +32,9 @@ public class datasourceTest {
     @Test
     public void t2(){
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        SimpleDao dao = context.getBean(SimpleDao.class);
         Simple s = new Simple();
         s.setName("ether008");
 
-        int z = dao.save(s);
-        System.out.println(z);
         //List<Simple> list = dao.list();
         //System.out.println(list);
     }

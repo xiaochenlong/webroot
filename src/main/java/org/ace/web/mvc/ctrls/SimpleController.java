@@ -28,8 +28,7 @@ public class  SimpleController{
     @Autowired
     private SimpleService service;
 
-    @RequestMapping(value = "/xreg",produces = {MediaType.APPLICATION_JSON_VALUE})
-
+    @RequestMapping(value = "/reg",produces = {MediaType.APPLICATION_JSON_VALUE})
     public Model register(Model model,Simple simple){
         int ret = service.save(simple);
         model.addAttribute("saveret",ret);

@@ -13,6 +13,7 @@
         <org.springframework.security-version>4.0.1.RELEASE</org.springframework.security-version>
         <org.aspectj-version>1.8.1</org.aspectj-version>
         <org.slf4j-version>1.7.12</org.slf4j-version>
+        <storm.version>0.10.0</storm.version>
     </properties>
     <repositories>
         <repository>
@@ -163,6 +164,36 @@
             <version>2.2.2</version>
         </dependency>
 
+        <!--storm-->
+        <dependency>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-core</artifactId>
+            <version>${storm.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>servlet-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-slf4j-impl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>log4j-over-slf4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
         <!--Test-->
         <dependency>
             <groupId>junit</groupId>
@@ -175,13 +206,13 @@
 
         <finalName>webapp</finalName>
         <resources>
-             <resource>
-                 <directory>src/main/java</directory>
-                 <excludes>
-                     <exclude>**/*.java</exclude>
-                 </excludes>
-             </resource>
-         </resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
 
         <plugins>
 
@@ -247,8 +278,6 @@
                     </httpConnector>
                 </configuration>
             </plugin>
-
-
         </plugins>
     </build>
 </project>

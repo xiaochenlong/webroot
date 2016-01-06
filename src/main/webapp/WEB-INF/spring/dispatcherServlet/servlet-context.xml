@@ -35,5 +35,19 @@
 	<!-- Imports user-defined @Controller beans that process client requests -->
 	<import resource="controllers.xml" />
 
+	<bean class="backtype.storm.utils.DRPCClient">
+		<constructor-arg name="conf">
+			<map>
+				<entry key="storm.thrift.transport" value="backtype.storm.security.auth.SimpleTransportPlugin"></entry>
+				<entry key="storm.nimbus.retry.times" value="3"></entry>
+				<entry key="storm.nimbus.retry.interval.millis" value="1000"></entry>
+				<entry key="drpc.max_buffer_size" value="1048576"></entry>
+				<entry key="storm.nimbus.retry.intervalceiling.millis" value="1000"></entry>
+			</map>
+		</constructor-arg>
+		<constructor-arg name="host" value="192.168.12.10"></constructor-arg>
+		<constructor-arg name="port"  value="3772"></constructor-arg>
+		<constructor-arg name="timeout" value="10000"></constructor-arg>
+	</bean>
 	
 </beans>
