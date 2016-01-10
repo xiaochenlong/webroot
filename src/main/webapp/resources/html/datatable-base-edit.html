@@ -20,6 +20,7 @@
                 ajax: "../../resources/data/datatable.json",
                 table: "#example",
                 idSrc: 'DT_RowId',
+                //display: 'envelope',
                 fields: [{
                     label: "First name:",
                     name: "first_name"
@@ -74,17 +75,18 @@
                 }
             });
 
-            // Activate the bubble editor on click of a table cell
+            // 单元格编辑
             $('#example').on('click', 'tbody td:not(:first-child)', function (e) {
-               // editor.bubble(this);
+               //editor.bubble(this);
             });
 
             var table = $('#example').DataTable({
                 ajax: {
                     "url": "../../resources/data/datatable.json",
                     "data": function (d) {
-                        d.extra_search = 1;
-                        return JSON.stringify(d);
+                        d.version = 1;
+                        var json = {data:JSON.stringify(d)}
+                        return json;
                     }
                 },
                 processing: true,
@@ -127,17 +129,18 @@
                 }],
                 headerCallback: function (thead, data, start, end, display) {
                     var api = this.api();
-
-                    $(thead).find('th').eq(0).html('<input type="checkbox" class="group-checkable" data-set="#example .checkboxes" />');
+                    $(thead).find('th').eq(0).html('<input type="checkbox" class="group-checkable" data-set=".checkboxes" />');
                     jQuery('.group-checkable', $(thead)).on('click', function () {
                         var set = jQuery(this).attr("data-set");
                         var checked = jQuery(this).is(":checked");
-                        jQuery(set).each(function () {
-                            console.info($(this));
+                        var table_dom = $(thead).closest('table');
+                        jQuery(set,table_dom).each(function () {
                             if (checked) {
-                                $(this).attr("checked", true);
+                                $(this).prop('checked', true);
+                                api.table().row($(this).closest('tr')).select();
                             } else {
-                                $(this).attr("checked", false);
+                                $(this).prop('checked', false);
+                                api.table().row($(this).closest('tr')).deselect();
                             }
                         });
                     });
@@ -153,16 +156,18 @@
             table.on('preXhr.dt', function (e, settings, data) {
                 console.info(data.sessionId);
             });
+
             table.on('deselect', function (e, dt, type, index) {
                 if (type === 'row') {
                     var node = dt.row(index).node();
-                    $('input.checkboxes', node).attr("checked", false);
+                    $('input.checkboxes', node).prop('checked', false);
                     var data = dt.row(index).data();
                 }
             });
+
             table.on('select', function (e, dt, type, index) {
                 var node = dt.row(index).node();
-                $('input.checkboxes', node).attr("checked", true);
+                $('input.checkboxes', node).prop('checked', true);
                 if (type === 'row') {
                     var data = dt.row(index).data();
                 }
