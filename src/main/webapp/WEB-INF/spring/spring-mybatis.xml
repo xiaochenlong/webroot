@@ -9,6 +9,9 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 		">
+     <context:component-scan base-package="org.ace.web.dao">
+         <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+     </context:component-scan>
 
     <context:property-placeholder location="/WEB-INF/spring/app.properties"/>
 

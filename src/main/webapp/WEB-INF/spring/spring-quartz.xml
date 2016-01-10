@@ -5,7 +5,7 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
-	<task:annotation-driven/>
+	<!--<task:annotation-driven/>-->
 	
 	<!-- quartz 任务 -->
 	<bean id="simplejob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">

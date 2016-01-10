@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <http pattern="/images/**" security="none" />
+    <http auto-config="true">
+        <intercept-url pattern="/vc/**" access="ROLE_VC" />
+        <intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
+        <intercept-url pattern="/helper/**" access="ROLE_HELPER" />
+        <form-login login-page="/login.jsp" login-processing-url="/dologin" default-target-url="/"/>
+        <logout logout-url="/dologout"  logout-success-url="/login.jsp" />
+        <logout />
+    </http>
+
+    <authentication-manager>
+        <!--<authentication-provider user-service-ref="udetailsService" />-->
+        <authentication-provider>
+            <user-service>
+                <user name="aa" password="aaa" authorities="ROLE_USER, ROLE_ADMIN" />
+                <user name="bbb" password="bbb" authorities="ROLE_USER" />
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+
+    <global-method-security>
+       <!-- <protect-pointcut expression="execution(* org.sin.common.service.AdminService.*(..))"
+                          access="ROLE_ADMIN" />
+        <protect-pointcut expression="execution(* org.sin.common.service.HelperService.*(..))"
+                          access="ROLE_HELPER" />
+        <protect-pointcut expression="execution(* org.sin.common.service.VCUserService.*(..))"
+                          access="ROLE_VC" />-->
+    </global-method-security>
+
+</beans:beans>
