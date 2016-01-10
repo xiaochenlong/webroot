@@ -6,6 +6,8 @@
 		http://www.springframework.org/schema/security
 		http://www.springframework.org/schema/security/spring-security.xsd">
 
+    <beans:bean name="bcryptEncoder"
+                class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
     <http pattern="/images/**" security="none" />
     <http auto-config="true">
         <intercept-url pattern="/vc/**" access="ROLE_VC" />
