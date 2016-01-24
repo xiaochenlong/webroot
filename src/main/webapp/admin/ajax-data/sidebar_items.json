@@ -1,5 +1,6 @@
 [
    	 { "link" :"index", "title" : "Dashboard", "icon" : "fa fa-tachometer" } ,
+	 { "link" :"dt/edit", "title" : "simpleCURD", "icon" : "fa fa-tachometer" } ,
 	 {
 	  "link" : null, "title" : "UI & Elements" , "icon" : "fa fa-desktop",
 	  "submenu" :
@@ -24,7 +25,7 @@
 				"submenu" : 
 				  [
 					{ "link" : null , "title" : "Add Product" , "icon" : "fa fa-plus purple" } ,
-					{ "link" : null , "title" : "View Products" , "icon" : "fa fa-eye pink" }
+					{ "link" : "user/add" , "title" : "View Products" , "icon" : "fa fa-eye pink" }
 				  ]
 			}
 		  ]
