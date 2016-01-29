@@ -68,7 +68,7 @@
         <appender-ref ref="dao_FILE"/>
     </logger>
 
-    <logger name="org.springframework.beans.factory" level="info" />
+    <logger name="org.springframework" level="info" />
 
     <root level="info">
         <appender-ref ref="STDOUT"/>

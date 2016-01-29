@@ -9,6 +9,9 @@
     <beans:bean name="bcryptEncoder"
                 class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
     <http pattern="/images/**" security="none" />
+    <http pattern="/resources/**" security="none" />
+    <http pattern="/admin/**" security="none" />
+
     <http auto-config="true">
         <intercept-url pattern="/vc/**" access="ROLE_VC" />
         <intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
