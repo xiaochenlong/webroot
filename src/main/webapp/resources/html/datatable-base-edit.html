@@ -162,7 +162,8 @@
                 }],
                 headerCallback: function (thead, data, start, end, display) {
                     var api = this.api();
-                    $(thead).find('th').eq(0).html('<input type="checkbox" class="group-checkable" data-set=".checkboxes" />');
+                    //<label> <input type="checkbox" class="ace" /><span class="lbl"></span></label>
+                    $(thead).find('th').eq(0).html('<label><input type="checkbox" class="group-checkable" data-set=".checkboxes" /><span class="lbl"></span></label>');
                     jQuery('.group-checkable', $(thead)).on('click', function () {
                         var set = jQuery(this).attr("data-set");
                         var checked = jQuery(this).is(":checked");
