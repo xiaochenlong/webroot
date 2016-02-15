@@ -11,6 +11,6 @@
 	</context:component-scan>
 
 	<import resource="spring-security.xml"/>
-	<!--<import resource="spring-quartz.xml"/>-->
+	<import resource="spring-quartz.xml"/>
 	<import resource="spring-mybatis.xml"/>
 </beans>
