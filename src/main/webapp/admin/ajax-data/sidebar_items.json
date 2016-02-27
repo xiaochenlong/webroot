@@ -1,7 +1,15 @@
 [
    	 { "link" :"index", "title" : "Dashboard", "icon" : "fa fa-tachometer" } ,
 	 { "link" :"dt/edit", "title" : "simpleCURD", "icon" : "fa fa-tachometer" } ,
-	 {
+	{
+		"link" : null , "title" : "安全管理" , "icon" : "fa fa-list",
+		"submenu" :
+		[
+			{ "link" : "user/roles" , "title" : "角色" } ,
+			{ "link" : "user/users" , "title" : "用户" }
+		]
+	},
+	{
 	  "link" : null, "title" : "UI & Elements" , "icon" : "fa fa-desktop",
 	  "submenu" :
 	  [
@@ -32,7 +40,6 @@
 		}
 	  ]
 	 } ,
-	 
 	 {
 	  "link" : null , "title" : "Tables" , "icon" : "fa fa-list",
 	  "submenu" :

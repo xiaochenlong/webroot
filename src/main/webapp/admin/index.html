@@ -5,13 +5,12 @@
     <meta charset="utf-8"/>
     <title>Welcome - Ace Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-
     <!--[if !IE]> -->
     <link rel="stylesheet" href="./assets/css/pace.css"/>
-    <script data-pace-options='{ "ajax": true, "document": true, "eventLag": false, "elements": false }'
-            src="./assets/js/pace.js"></script>
+    <script src="./assets/js/pace.js"
+       data-pace-options='{ "ajax": true, "document": true, "eventLag": false, "elements": false }'>
+    </script>
     <!-- <![endif]-->
-
     <!-- bootstrap & fontawesome -->
     <link rel="stylesheet" href="./assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="./assets/css/font-awesome.css"/>
@@ -45,7 +44,6 @@
     </script>
 
     <div class="navbar-container" id="navbar-container">
-
         <!-- #section:basics/sidebar.mobile.toggle 小设备显示导航树-->
         <button type="button" id="menu-toggler" data-target="#sidebar" class="navbar-toggle menu-toggler pull-left" >
             <span class="sr-only">Toggle sidebar</span>
@@ -356,7 +354,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#">
+                            <a href="./login.html">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 退出
                             </a>
@@ -432,10 +430,9 @@
     </div>
     <!-- /导航树section:basics/sidebar -->
 
-
     <div class="main-content">
         <div class="main-content-inner">
-            <!-- #显示当前页面 -->
+            <!-- #内容页 -->
             <div class="breadcrumbs" id="breadcrumbs">
                 <script type="text/javascript">
                     try {
@@ -447,7 +444,7 @@
                 <ul class="breadcrumb">
                     <li>
                         <i class="ace-icon fa fa-home home-icon"></i>
-                        <a href="#">Home</a>
+                        <a href="#">主页</a>
                     </li>
                 </ul><!-- /.breadcrumb -->
 
@@ -464,9 +461,7 @@
                 <!-- /section:basics/content.searchbox -->
             </div>
             <!-- /section:basics/content.breadcrumbs -->
-
             <div class="page-content">
-
                 <!-- 主题设置 -->
                 <div class="ace-settings-container" id="ace-settings-container">
                     <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
@@ -486,41 +481,31 @@
                                 </div>
                                 <span>&nbsp; Choose Skin</span>
                             </div>
-
                             <!-- /section:settings.skins -->
-
                             <!-- #section:settings.navbar -->
                             <div class="ace-settings-item">
                                 <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar"/>
                                 <label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
                             </div>
-
                             <!-- /section:settings.navbar -->
-
                             <!-- #section:settings.sidebar -->
                             <div class="ace-settings-item">
                                 <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar"/>
                                 <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
                             </div>
-
                             <!-- /section:settings.sidebar -->
-
                             <!-- #section:settings.breadcrumbs -->
                             <div class="ace-settings-item">
                                 <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs"/>
                                 <label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
                             </div>
-
                             <!-- /section:settings.breadcrumbs -->
-
                             <!-- #section:settings.rtl -->
                             <div class="ace-settings-item">
                                 <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl"/>
                                 <label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
                             </div>
-
                             <!-- /section:settings.rtl -->
-
                             <!-- #section:settings.container -->
                             <div class="ace-settings-item">
                                 <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container"/>
@@ -529,38 +514,31 @@
                                     <b>.container</b>
                                 </label>
                             </div>
-
                             <!-- /section:settings.container -->
                         </div><!-- /.pull-left -->
-
                         <div class="pull-left width-50">
                             <!-- #section:basics/sidebar.options -->
                             <div class="ace-settings-item">
                                 <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover"/>
                                 <label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
                             </div>
-
                             <div class="ace-settings-item">
                                 <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact"/>
                                 <label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
                             </div>
-
                             <div class="ace-settings-item">
                                 <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight"/>
                                 <label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
                             </div>
-
                             <!-- /section:basics/sidebar.options -->
                         </div><!-- /.pull-left -->
                     </div><!-- /.ace-settings-box -->
                 </div>
                 <!-- 主题设置 -->
-
                 <div class="page-content-area" data-ajax-content="true">
-                    <!-- ajax content goes here -->
+                    <!--ajax content goes here -->
+                    <!--内容-->
                 </div><!-- /.page-content-area -->
-
-
             </div><!-- /.page-content -->
         </div>
     </div><!-- /.main-content -->
@@ -571,7 +549,7 @@
             <div class="footer-content">
                 <span class="bigger-120">
                     <span class="blue bolder">Ace</span>
-                     Application &copy; 2013-2014
+                     Application &copy; 2013-2017
                 </span>
                 &nbsp; &nbsp;
                 <span class="action-buttons">
@@ -589,13 +567,10 @@
             <!-- /section:basics/footer -->
         </div>
     </div>
-
     <!--回到顶部-->
     <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
         <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-    </a>
-    <!--/回到顶部-->
-
+    </a><!--/回到顶部-->
 </div><!-- /.main-container -->
 
 <!-- basic scripts -->
